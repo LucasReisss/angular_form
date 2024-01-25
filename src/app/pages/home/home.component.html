@@ -1,0 +1,38 @@
+<div class="form__container">
+  <form action="">
+   <fieldset>
+    <legend>Cadastro de notas</legend>
+    <p>
+      <label for="name" >Nome:</label><br>
+      <input type="text" [(ngModel)]="nome" name="nome"><br>
+
+      <label for="Nota1" >Nota 1:</label><br>
+      <input type="text" [(ngModel)]="nota1" name="nota1"><br>
+
+      <label for="nota2" >Nota 2:</label><br>
+      <input type="text" [(ngModel)]="nota2" name="nota 2"><br>
+      <button type="submit" (click)="onSubmit()">Enviar</button>
+    </p>
+   </fieldset>
+  </form>
+
+  <div class="form__table">
+    <h3>Resultado</h3>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Média</th>
+          <th>Condição</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let aluno of alunos">
+        <tr>
+          <td>{{aluno.nome}}</td>
+          <td>{{aluno.media}}</td>
+          <td>{{aluno.resultado}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
